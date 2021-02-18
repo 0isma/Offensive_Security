@@ -38,7 +38,7 @@ Important commands:
 
 - **exploit**: Runs the exploit 
 
-
+<br>
 
 ## 2. Understanding Metasploit
 
@@ -57,3 +57,25 @@ MAIN FUNCTIONALITY: perform scanning to the victim and DOS attacks.
 4. **Encoders**: Re-enconde payloads and exploits to bypass antiviruses and defese systems. There are several types and will be chosen depending on the system we wanna attack.
 5. **Nops**: Used execute remote code in the victims machine (exploit the buffer overflows, etc)
 6. **Post**: Post explotation. Used after the machine has been exploited. Perform further attacks after the machine has been compromised.
+
+<br>
+
+## 3. Information Gathering - Auxiliary scanners
+
+Using scanning tools in the msp console is cool to keep things modularized.
+
+- Nmap is an option.
+- SSH scanner will detect ssh versions used in each of the targets
+        
+        search ssh_version
+
+Once found the right one:
+
+        use "exploit"
+        options       To see the values to be changed 
+        run           Launches the auxiliary module
+
+IMPORTANT: run is used for auxiliary mode, exploit is not!!
+<br>
+
+## 4. Basic commands
