@@ -78,4 +78,19 @@ Once found the right one:
 IMPORTANT: run is used for auxiliary mode, exploit is not!!
 <br>
 
-## 4. Basic commands
+## 4. Basic exploitation
+
+We need to look for the vulnerabilities
+
+We search for the modules to be used
+
+Find the exploit (if it is an exploit what we will use)
+
+Execute exploit after configuring the different options
+
+
+## 5. Meterpreter (To be done in Kali)
+
+Important notes:
+
++ Clearev: clear all logs!!! Super important
