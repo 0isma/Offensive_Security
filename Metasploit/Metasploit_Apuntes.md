@@ -12,9 +12,12 @@ Once done, run Metasploit console:
 
 Key Parts:
 
-1. Exploit: It is a module that takes an advantage of a system that has a vulnerability. It drops a Payload
-2. Payload: Either reverse shell or meterpreter, what the exploit will try to implant in your system
+1. Exploit 
+2. Payload
 3. Auxiliary
+4. Nops
+5. Encoders
+6. Post
 
 
 Important commands:
@@ -37,4 +40,20 @@ Important commands:
 
 
 
+## 2. Understanding Metasploit
 
+Main goal: understand its components.
+
+Metasploit modules are stored in a folder: /usr/share/metasploit-framework
++ Modules are stored here.
+
+1. **Exploit**:** It is a module that takes an advantage of a system that has a vulnerability. It drops a Payload
+2. **Payload**: Either reverse shell or meterpreter, what the exploit will try to implant in your system. They are left in the victim's systems and it allows the attacker to "own" the system. It is divided into 3 folders:
+      1. Singles: the are designed to perform just one action (single action).
+      2. Stagers: Used to perfom or create a communicaction channel to the objective to be used in future to drop a given payload.
+      3. Stages: Used to perform the full action, more dangerous attacs (meterpreters, inverse shells, etc.)
+3. **Auxiliary**: Will give use unique kinds of attacks (scanner, DOS, etc.) Very robust tools, it is becoming very popular. 
+MAIN FUNCTIONALITY: perform scanning to the victim and DOS attacks.
+4. **Encoders**: Re-enconde payloads and exploits to bypass antiviruses and defese systems. There are several types and will be chosen depending on the system we wanna attack.
+5. **Nops**: Used execute remote code in the victims machine (exploit the buffer overflows, etc)
+6. **Post**: Post explotation. Used after the machine has been exploited. Perform further attacks after the machine has been compromised.
