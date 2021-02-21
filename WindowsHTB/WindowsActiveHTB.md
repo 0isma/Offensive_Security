@@ -49,6 +49,37 @@ We first perform nmap: nmap -sC (for scripts)-sV (enumerate versions)-oA (put al
 - With -d we specify the domain and with -r the range
 
 ### 2.2 Examining Nmap Scripts are run
+SMB is used  when sharing files in a local network. 
+
 We saw samba's port oppened and that may provide us nice information like openned shares.
 
         locate -r '\.nse$'
+
+This lists all tthe nmap scripts
+
+        locate -r '\.nse$' | xargs grep categories | grep 'default\|version\|safe' | grep smb
+
+
+\| used as OR log operation and xargs allows us to perform a given command to very single element separated by a space or newline.
+
+We then execute all the scripts which contain the safe keyword.
+
+                nmap --script safe -p 445 10.10.10.100
+
+It does not tell much info, so we must try more things
+
+### 2.3 Using smbclient to list shares avaliable
+
+Smbclient command extraction from man page:
+- *smbclient is a client that can 'talk' to an SMB/CIFS server. It offers an interface similar to that of the ftp program*
+- *Operations include things like getting files from the server to the local machine, putting files from the local machine to the server, retrieving directory information from the server and so on.*
+
+    - smbclient -I: ip of the server we wanna connect to
+    - smbclient -L: list of services the server can provide us with.
+
+
+        smbclient -L //10.10.10.100
+
+Linux tool enum4linux "IP"
+
+Not very good, the better one smbmap -H IP, we get the directories:
