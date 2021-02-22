@@ -1,5 +1,4 @@
-# METASPLOIT
-
+# METASPLOIT Guide
 ## 1. Basics: Modules, Exploits and Payloads
 
 Using Kali or Parrot (Kali in my case) we require PostgreSQL 
@@ -94,3 +93,6 @@ Execute exploit after configuring the different options
 Important notes:
 
 + Clearev: clear all logs!!! Super important
+
+
+
